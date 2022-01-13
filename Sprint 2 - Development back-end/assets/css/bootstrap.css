@@ -2942,8 +2942,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #00C1FE;
+  border-color: #00C1FE;
 }
 .btn-primary:hover {
   color: #fff;
@@ -6369,7 +6369,8 @@ textarea.form-control-lg {
 }
 
 .shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; */
+  box-shadow : 2px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .shadow-sm {
@@ -6563,6 +6564,10 @@ textarea.form-control-lg {
 
 .w-25 {
   width: 25% !important;
+}
+
+.w-35 {
+  width: 37% !important;
 }
 
 .w-50 {
@@ -6941,6 +6946,10 @@ textarea.form-control-lg {
 
 .mt-5 {
   margin-top: 3rem !important;
+}
+
+.mt-6 {
+  margin-top: 3.6rem !important; /* this is my code */
 }
 
 .mt-auto {
@@ -7391,11 +7400,11 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-color: #0d6efd !important;
+  background : linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #00C1FE !important;
 }
 
 .bg-success {
