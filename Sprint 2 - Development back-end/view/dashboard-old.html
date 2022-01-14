@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> -->
-    <title>E-Classe | Students list</title>
+    <title>E-Classe | Dashboard</title>
 </head>
-<body class="bg-light">
+<body>
     <div class="container-fluid">
         <div class="row">
             <div class="flex-column bg-yellow col-lg-2 col-md-4 col-sm-6 col-xs-12">
@@ -48,7 +48,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-5">
                     <button class="btn nav-link btn">Logout <i class="fas fa-sign-out-alt text-dark"></i></button>
                 </div>
             </div>
@@ -66,79 +66,56 @@
                         </div>
                     </div>
                 </div>
-                <!-- Content -->
-                <div class="row mt-5 flex-row">
-                  <div class="title col-lg-4 col-md-6 col-sm-12">
-                    <h2>Payements list</h2>
-                  </div>
-                  <div class="d-flex gap-2 align-items-center justify-content-end col-lg-8 col-md-6 col-sm-12">
-                    <div style="font-size: 1.5rem;">
-                      <i class="fas fa-sort text-primary"></i>
+                <div class="row mt-5">
+                    <div class="col-sm-6 col-md-3" >
+                        <div class="card" style="font-size: 1.5rem; background-color: #F0F9FF
+                        ; color: #74C1ED;">
+                            <div class="card-body">
+                                <i class="fas fa-graduation-cap fa-lg"></i>
+                                <p class="text-muted fa-xs">Students</p>
+                                <p class="fa-xs d-flex justify-content-end text-dark fw-bold">
+                                    243
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <hr>
-                </div>
-                <div class="row mt-5 px-5">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Payment Shedule</th>
-                            <th scope="col">Bill Number</th>
-                            <th scope="col">Amount Paid</th>
-                            <th scope="col">Balance Amount</th>
-                            <th scope="col">Date</th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Karthi</td>
-                            <td>First</td>
-                            <td>00012223</td>
-                            <td>DHS 100,000</td>
-                            <td>DHS 500,000</td>
-                            <td>05-Jan, 2022</td>
-                            <td><i class="far fa-eye text-primary"></i></td>
-                          </tr>
-                          <tr>
-                            <td>Karthi</td>
-                            <td>First</td>
-                            <td>00012223</td>
-                            <td>DHS 100,000</td>
-                            <td>DHS 500,000</td>
-                            <td>05-Jan, 2022</td>
-                            <td><i class="far fa-eye text-primary"></i></td>
-                          </tr>
-                          <tr>
-                            <td>Karthi</td>
-                            <td>First</td>
-                            <td>00012223</td>
-                            <td>DHS 100,000</td>
-                            <td>DHS 500,000</td>
-                            <td>05-Jan, 2022</td>
-                            <td><i class="far fa-eye text-primary"></i></td>
-                          </tr>
-                          <tr>
-                            <td>Karthi</td>
-                            <td>First</td>
-                            <td>00012223</td>
-                            <td>DHS 100,000</td>
-                            <td>DHS 500,000</td>
-                            <td>05-Jan, 2022</td>
-                            <td><i class="far fa-eye text-primary"></i></td>
-                          </tr>
-                          <tr>
-                            <td>Karthi</td>
-                            <td>First</td>
-                            <td>00012223</td>
-                            <td>DHS 100,000</td>
-                            <td>DHS 500,000</td>
-                            <td>05-Jan, 2022</td>
-                            <td><i class="far fa-eye text-primary"></i></td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div class="col-sm-6 col-md-3" >
+                        <div class="card" style="font-size: 1.5rem; background-color: #FEF6FB
+                        ; color: #EE95C5;">
+                            <div class="card-body">
+                                <i class="far fa-bookmark fa-lg"></i>
+                                <p class="text-muted fa-xs">Course</p>
+                                <p class="fa-xs d-flex justify-content-end text-dark fw-bold">
+                                    13
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3" >
+                        <div class="card" style="font-size: 1.5rem; background-color: #FEFBEC
+                        ; color: #00C1FE;">
+                            <div class="card-body">
+                                <i class="fas fa-dollar-sign fa-lg"></i>
+                                <p class="text-muted fa-xs">Payements</p>
+                                <p class="fa-xs d-flex justify-content-end text-dark fw-bold">
+                                    Dhs 556, 000
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3" >
+                        <div class="card bg-primary" style="font-size: 1.5rem;
+                        ; color: #fff;">
+                            <div class="card-body">
+                                <i class="far fa-user fa-lg"></i>
+                                <p class="text-muted fa-xs">Users</p>
+                                <p class="fa-xs d-flex justify-content-end text-dark fw-bold">
+                                    3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -147,12 +124,5 @@
     <!-- <script src="../assets/js/bootstrap.bundle.js"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-</body>
-</html>
-  
-  
-    
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </body>
 </html>
