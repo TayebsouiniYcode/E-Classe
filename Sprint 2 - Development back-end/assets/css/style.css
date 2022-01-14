@@ -1,3 +1,23 @@
-.body {
-    background-color: linear-gradient(6969.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
+
+.bg-yellow {
+    background-color: #FAFFC1 !important;
+}
+.w-20 {
+    width: 20% !important;
+}
+.w-80 {
+    width: 80% !important;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #00C1FE;
+}
+
+.text-primary {
+    color: #00C1FE !important;
+}
+
+.bg-white {
+    background-color: #fff !important;
 }
