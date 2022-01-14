@@ -1,7 +1,5 @@
 # E-LEARNING APPLICATION V1.0 : E-Classe
 
-   link : https://e-classe.netlify.app/sprint%202%20-%20development%20back-end/index.html
-
 ## Brief 1 : Intégration du maquette avec un framework CSS de votre chois ainsi appliquer le principe de développement DRY "Don't Repeat Yourself" avec php
 
 ### Technologies utilisés : 
