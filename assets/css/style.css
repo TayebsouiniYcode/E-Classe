@@ -27,3 +27,7 @@
     border-left: solid #00C1FE;
     border-left-width: .4rem;
 }
+
+.bg-primary {
+    background : linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%) !important;
+}
