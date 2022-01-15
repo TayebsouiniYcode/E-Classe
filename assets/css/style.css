@@ -21,3 +21,9 @@
 .bg-white {
     background-color: #fff !important;
 }
+
+.v-line {
+    padding-left: .7rem;
+    border-left: solid #00C1FE;
+    border-left-width: .4rem;
+}
