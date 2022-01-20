@@ -1,5 +1,5 @@
 <!-- Sidenav -->
-<div class="flex-column bg-yellow col-lg-2 col-md-3 col-sm-2 col-3 vh-100">
+<div class="flex-column bg-yellow col-lg-2 col-md-3 col-sm-2 col-3 vh-100 ">
     <div class="pt-3">
         <h1 class="h4">E-Classe</h1>
     </div>
