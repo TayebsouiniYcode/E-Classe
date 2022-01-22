@@ -16,7 +16,7 @@
                             Enter your credentials to access your account 
                         </p>
                     </div>
-                    <form action="view/dashboard.php">
+                    <form action="./dashboard.php">
                         <div class="p-4">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -32,7 +32,7 @@
                                     Remember Me
                                 </label>
                             </div>
-                            <button class="btn btn-primary text-center mt-2 w-100" type="submit">
+                            <button class="btn btn-primary text-center mt-2 w-100" type="submit" style="background-color: #00C1FE">
                                 Login
                             </button>
                             <p class="text-center mt-2 text-muted">

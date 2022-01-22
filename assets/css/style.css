@@ -31,3 +31,7 @@
 .bg-primary {
     background : linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%) !important;
 }
+
+.bg-blue {
+    background-color: #00C1FE !important;
+}

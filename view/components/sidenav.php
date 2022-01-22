@@ -1,5 +1,5 @@
 <!-- Sidenav -->
-<div class="flex-column bg-yellow col-lg-2 col-md-3 col-sm-2 col-3 mn-vh-100">
+<div class="flex-column bg-yellow col-lg-2 col-md-3 col-sm-2 col-3 min-vh-100">
     <div class="position-fixed ">
         <div class="pt-3">
             <h1 class="h4">E-Classe</h1>
@@ -65,7 +65,7 @@
                 </li>
             </ul>
             <div class="">
-                <a href="../index.php" class="btn nav-link text-dark mt-3">
+                <a href="./index.php" class="btn nav-link text-dark mt-3">
                     <span class="d-none d-md-inline-block align-middle">
                         Logout
                     </span> 
