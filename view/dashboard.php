@@ -9,7 +9,7 @@
 
         <!-- content -->
         <div class="col-lg-10 col-md-8 col-sm-10 col-9">
-            <?php 
+            <?php
                 include "./components/topbar.php"; 
             ?>
             <!-- cards -->
@@ -18,7 +18,7 @@
                     $cards = array(
                         array(
                             'title' => 'Students',
-                            'number' => 243,
+                            'number' => 24,
                             'icon' => 'fas fa-graduation-cap',
                             'bg-color' => '#F0F9FF',
                             'color' => '#74C1ED'
@@ -54,10 +54,10 @@
                             HEADER;
                     
                     $footerCard = <<<FOOTER
-                        </div>
-                        </div>
-                        </div>
-                        FOOTER;
+                            </div>
+                            </div>
+                            </div>
+                            FOOTER;
 
 
                     for ($i = 0 ; $i < $numberOfCards ; $i++) {
