@@ -16,7 +16,7 @@
         <nav class="">
             <ul class="nav flex-column mx-2">
                 <li class="nav-item">
-                    <a class="nav-link active btn text-start text-dark" href="dashboard.php">
+                    <a class="nav-link btn text-start text-dark" href="dashboard.php">
                         <i class="bi bi-house-door me-2 fa-lg align-middle"></i>
                         <span class="d-none d-md-inline-block align-middle">
                             Home
@@ -74,5 +74,4 @@
             </div>
         </nav>
     </div>
-    
 </div>

@@ -1,10 +1,10 @@
 <?php include './components/header.php' ?>
 
-<main class="d-flex justify-content-start pt-5 pb-2 bg-primary">
+<main class="d-flex justify-content-start align-items-center bg-primary vh-100">
     <div class="container-fluid">
         <div class="">
             <div class="d-flex justify-content-center">
-                <div class="col-md-4 shadow rounded-3 col-sm-12 col-md-8 col-lg-4 p-4 bg-light">
+                <div class="col-sm-12 col-md-8 shadow rounded-3 col-lg-4 p-4 bg-light">
                     <div class="text-start ms-5">
                         <h1 class="v-line h3">
                             E-Classe
