@@ -4,8 +4,6 @@
     //fetch data from json
     $json = file_get_contents('../db/student.json');
     $data = json_decode($json, true);
-
-    var_dump($data);
 ?>
 <div class="container-fluid">
     <div class="row">
