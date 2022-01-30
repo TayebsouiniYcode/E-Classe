@@ -12,7 +12,7 @@
 * php 8
 * JSON files (students data)
 * CSV files (payments data)
-
+* Associative array
 ### Projet context :
 
 * Réalisation de l'UI adaptable de la maquette avec un framework CSS (Bootstrap)

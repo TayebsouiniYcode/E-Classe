@@ -1,8 +1,8 @@
 <?php
-    include "./components/header.php";
-    include "./dashboard/data_card.php";
-?>
-<?php
+
+include "./components/header.php";
+include "./dashboard/data_card.php";
+
 $cards = array(
     array(
         'title' => 'Students',
@@ -34,6 +34,7 @@ $cards = array(
         'color' => '#fff'
     )
 );
+
 $numberOfCards = count($cards);
 ?>
 
@@ -45,22 +46,23 @@ $numberOfCards = count($cards);
             <?php include "./components/topbar.php"; ?>
             <!-- cards -->
             <div class="row mt-5">
-                    <?php for($i = 0 ; $i < $numberOfCards ; $i++) : ?>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-2">
-                            <div class="card" style="font-size: 1.5rem;
+                <?php for($i = 0 ; $i < $numberOfCards ; $i++) : ?>
+                    <div class="col-sm-6 col-md-6 col-lg-3 mt-2">
+                        <div class="card" style="font-size: 1.5rem;
                                     background-color: <?php print($cards[$i]['bg-color']); ?>;
                                     color: <?php print($cards[$i]['color']); ?>">
                             <div class="card-body">
                                 <i class=" <?php print($cards[$i]['icon']); ?> fa-lg"></i>
-                                <p class="text-muted fa-xs"> <?php print($cards[$i]['title']); ?></p>
+                                <p class="text-muted fa-xs">
+                                    <?php print($cards[$i]['title']); ?>
+                                </p>
                                 <p class="fa-xs d-flex justify-content-end text-dark fw-bold">
                                     <?php print($cards[$i]['number']); ?>
                                 </p>
-
-                            </div>
                             </div>
                         </div>
-                    <?php endfor; ?>
+                    </div>
+                <?php endfor; ?>
             </div>
         </div>
     </div>
