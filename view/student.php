@@ -2,7 +2,7 @@
 
 <?php
     //fetch data from json file
-    $json = file_get_contents('../db/student.json');
+    $json = file_get_contents('../translations/json/student.json');
     $data = json_decode($json, true);
 ?>
 <div class="container-fluid">
@@ -37,7 +37,7 @@
                         </a>
                         -->
                         <?php require_once './student/add.php' ?>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewStudent">
+                        <button type="button" class="btn btn-primary bg-blue" data-bs-toggle="modal" data-bs-target="#addNewStudent">
                             add new student
                         </button>
                     </div>
@@ -58,7 +58,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <?php  foreach ($data as $key => $student) : ?>
+                    <?php foreach($data as $key => $student) : ?>
                     <tr class="mt-2">
                         <th scope="row">
                             <img
@@ -66,7 +66,7 @@
                               alt="avatar img"
                               width="65" height="55">
                         </th>
-                        <?php foreach ($student as $keyStudent => $value) : ?>
+                        <?php foreach($student as $keyStudent => $value) : ?>
                         <?php if($keyStudent != 'image') : ?>
                         <td class="align-middle">
                             <?php print($value); ?>
@@ -77,16 +77,16 @@
                             <a href="./student/edit.php?index=<?php print($key);?>">
                                 <i class="fas fa-pen pe-3"></i>
                             </a>
-                            <a href="./student/delete.php?index=<?php print($key);?>">
+                            <a href="../src/controllers/student/delete.php?index=<?php print($key);?>">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
                     </tr>
-                    <?php   endforeach; ?>
+                    <?php endforeach; ?>
               </table>
             </div>
         </div>
     </div>
 </div>
 
-<?php include "./components/footer.php"; ?>
+<?php require  __DIR__ . "/components/footer.php"; ?>

@@ -65,7 +65,7 @@
                 </li>
             </ul>
             <div class="">
-                <a href="./index.php" class="btn nav-link text-dark mt-3">
+                <a href="../public/login.php" class="btn nav-link text-dark mt-3">
                     <span class="d-none d-md-inline-block align-middle">
                         Logout
                     </span> 

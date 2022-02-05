@@ -10,7 +10,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="./student/scriptAdd.php">
+                <form method="POST" action="../src/controllers/student/add.php">
                     <!--<a href="read.php" class="btn btn-primary">Back</a>-->
                     <div class="mb-1">
                         <label for="name" class="form-label">name</label>
@@ -39,7 +39,7 @@
                     </div>
                     -->
                     <div class="modal-footer">
-                        <input class="btn btn-primary bg-success w-100" type="submit" name="save">
+                        <input class="btn btn-primary bg-blue w-100" type="submit" name="save">
                     </div>
                 </form>
             </div>
@@ -47,10 +47,3 @@
         </div>
     </div>
 </div>
-
-<!--
-<div class="container w-75">
-    <h1 class="text-center mb-5 mt-5">Ajouter un étudiant</h1>
-
-</div>
--->

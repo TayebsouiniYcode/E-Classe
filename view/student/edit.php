@@ -1,12 +1,12 @@
 <?php
 if(isset($_GET['index']) == false) {
-    header('location: ./student.php');
+    header('location: ../../view/student.php');
 }
 
 $index = $_GET['index'];
 
 //get json data
-$json = file_get_contents('../../db/student.json');
+$json = file_get_contents('../../translations/json/student.json');
 $data = json_decode($json, true);
 
 $row = $data[$index];
@@ -15,7 +15,7 @@ include "../../view/components/header.php";
 ?>
 
 <div class="container w-50">
-    <form method="POST">
+    <form method="POST" action="../../src/controllers/student/edit.php">
         <!--<a href="read.php">Back</a>-->
         <div class="mb-3">
             <label for="name" class="form-label">name</label>
@@ -41,27 +41,4 @@ include "../../view/components/header.php";
     </form>
 </div>
 
-<?php
 
-if(isset($_POST['save'])){
-    //set the updated values
-    $input = array(
-        'image' => "profile.png",
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
-        'phone' => $_POST['phone'],
-        'enrollNumber' => $_POST['enrollNumber'],
-        'dateOfAdmission' => $_POST['dateOfAdmission']
-    );
-
-    //update the selected index
-    $data[$index] = $input;
-
-    //encode back to json
-    $data = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents('../../db/student.json', $data);
-
-    header('location: ../student.php');
-}
-include "../../view/components/footer.php";
-?>

@@ -3,7 +3,7 @@
 
 <div class="container w-75">
     <h1 class="text-center mb-5 mt-5">Ajouter un étudiant</h1>
-    <form method="POST" class="">
+    <form method="POST">
         <!--<a href="read.php" class="btn btn-primary">Back</a>-->
         <div class="mb-3">
             <label for="name" class="form-label">name</label>

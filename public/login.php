@@ -1,10 +1,10 @@
-<?php include './components/header.php' ?>
+<?php include '../view/components/header.php' ?>
 
 <main class="d-flex justify-content-start align-items-center bg-primary vh-100">
     <div class="container-fluid">
         <div class="">
             <div class="d-flex justify-content-center">
-                <div class="col-12 col-md-8 col-lg-4 shadow rounded-3 bg-light p-4">
+                <div class="shadow rounded-3 bg-light p-4 w-35">
                     <div class="text-start ms-5">
                         <h1 class="v-line h3">
                             E-Classe
@@ -16,7 +16,7 @@
                             Enter your credentials to access your account 
                         </p>
                     </div>
-                    <form action="./dashboard.php">
+                    <form action="../view/dashboard.php">
                         <div class="p-4">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -47,4 +47,4 @@
     </div>
 </main>
 
-<?php include './components/footer.php' ?>
+<?php include '../view/components/footer.php' ?>

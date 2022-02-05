@@ -7,6 +7,6 @@
         exit();
     }
 
-    Redirect('./view/login.php', false);
+    Redirect('./public/login.php', false);
 
 ?>
