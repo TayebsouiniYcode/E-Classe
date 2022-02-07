@@ -1,43 +1,49 @@
 <?php
-if(isset($_GET['index']) == false) {
+
+if(!isset($_GET['id'])) {
     header('location: ../../view/student.php');
 }
 
-$index = $_GET['index'];
+include_once "../../view/components/header.php";
+include_once '../../src/controllers/config.php';
 
-//get json data
-$json = file_get_contents('../../translations/json/student.json');
-$data = json_decode($json, true);
+$pdo = pdo_connect_mysql();
 
-$row = $data[$index];
+$stmt = $pdo->prepare('SELECT * FROM student WHERE Id_Student = ?');
+$stmt->execute([$_GET['id']]);
+$student = $stmt->fetch(PDO::FETCH_ASSOC);
 
-include "../../view/components/header.php";
 ?>
 
 <div class="container w-50">
     <form method="POST" action="../../src/controllers/student/edit.php">
+        <input type="hidden" value="<?php echo $student['Id_Student']?>" name="Id_Student">
         <!--<a href="read.php">Back</a>-->
         <div class="mb-3">
-            <label for="name" class="form-label">name</label>
-            <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name']; ?>">
+            <label for="Firstname" class="form-label">Firstname</label>
+            <input type="text" class="form-control" id="Firstname" name="Firstname" value="<?php echo $student['Firstname']; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="Lastname" class="form-label">Lastname</label>
+            <input type="text" class="form-control" id="Lastname" name="Lastname" value="<?php echo $student['Lastname']; ?>">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email']; ?>">
+            <input type="text" class="form-control" id="email" name="Email" value="<?php echo $student['Email']; ?>">
         </div>
         <div class="mb-3">
             <label for="phone" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $row['phone']; ?>">
+            <input type="text" class="form-control" id="phone" name="Phone" value="<?php echo $student['Phone'] ?>">
         </div>
         <div class="mb-3">
-            <label for="enrollNumber" class="form-label">enrollNumber</label>
-            <input type="text" class="form-control" id="enrollNumber" name="enrollNumber" value="<?php echo $row['enrollNumber']; ?>">
+            <label for="enrollNumber" class="form-label">EnrollNumber</label>
+            <input type="text" class="form-control" id="enrollNumber" name="EnrollNumber" value="<?php echo $student['EnrollNumber']; ?>">
         </div>
         <div class="mb-3">
             <label for="dateOfAdmission" class="form-label">dateOfAdmission</label>
-            <input type="text" class="form-control" id="dateOfAdmission" name="dateOfAdmission" value="<?php echo $row['dateOfAdmission']; ?>">
+            <input type="text" class="form-control" id="dateOfAdmission" name="DateOfAdmission" value="<?php echo $student['DateOfAdmission']; ?>">
         </div>
-        <input class="w-100 bg-success text-light border-0 p-2" type="submit" name="save" value="Save">
+        <input class="w-100 bg-success text-light border-0 p-2" type="submit" name="save" value="update">
     </form>
 </div>
 

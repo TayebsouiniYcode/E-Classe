@@ -1,18 +1,15 @@
 <?php
-//get the index
-$index = $_GET['index'];
+include '../config.php';
 
-//fetch data from json
-$data = file_get_contents('../../../translations/json/student.json');
-$data = json_decode($data, true);
-
-//delete the row with the index
-unset($data[$index]);
+$pdo = pdo_connect_mysql();
+$msg = '';
 
 
-//encode back to json
-$data = json_encode($data, JSON_PRETTY_PRINT);
-file_put_contents('../../../translations/json/student.json', $data);
-
-header('location: ../../../view/student.php');
-?>
+if (isset($_GET['id'])) {
+    $stmt = $pdo->prepare('DELETE FROM student WHERE Id_Student = ?');
+    $stmt->execute([$_GET['id']]);
+    // User clicked the "No" button, redirect them back to the read page
+    header('Location: ../../../view/student.php');
+} else {
+    exit('No ID specified!');
+}

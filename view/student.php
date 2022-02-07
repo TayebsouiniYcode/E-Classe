@@ -1,9 +1,22 @@
-<?php include "./components/header.php"; ?>
-
 <?php
-    //fetch data from json file
-    $json = file_get_contents('../translations/json/student.json');
-    $data = json_decode($json, true);
+include_once "./components/header.php";
+include_once "../src/controllers/config.php";
+
+$pdo = pdo_connect_mysql();
+
+// Prepare the SQL statement and get records from our contacts table, LIMIT will determine the page
+$stmt = $pdo->prepare('SELECT * FROM student');
+$stmt->execute();
+// Fetch the records so we can display them in our template.
+$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$numberOfStudents = $pdo->query('SELECT COUNT(*) FROM student')->fetchColumn();
+
+
+pdo_deconnect_msql($pdo);
+//$numberOfStudents = count($students);
+
+
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -11,13 +24,6 @@
         <!-- content -->
         <div class="col-9 col-sm-6 col-md-8 col-lg-10 ">
             <?php include './components/topbar.php' ?>
-            <!--
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-                <div>
-                    Etudiant ajouté avec succes
-                </div>
-            </div>
-            -->
             <!-- Content -->
             <div class="row mt-5">
                 <div class="title col-sm-12 col-md-6 col-lg-4">
@@ -28,14 +34,6 @@
                         <i class="fas fa-sort text-primary"></i>
                     </div>
                     <div>
-                        <!--
-                        <a href="student/add.php" class="btn btn-primary text-uppercase">
-                            <i class="bi bi-plus-lg"></i>
-                            <span class="d-none d-sm-inline-block">
-                                add new student
-                            </span>
-                        </a>
-                        -->
                         <?php require_once './student/add.php' ?>
                         <button type="button" class="btn btn-primary bg-blue" data-bs-toggle="modal" data-bs-target="#addNewStudent">
                             add new student
@@ -58,7 +56,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($data as $key => $student) : ?>
+                    <?php //foreach($res as $key => $student) : ?>
+                    <?php for($i = 0 ; $i < $numberOfStudents; $i++) : ?>
                     <tr class="mt-2">
                         <th scope="row">
                             <img
@@ -66,23 +65,35 @@
                               alt="avatar img"
                               width="65" height="55">
                         </th>
-                        <?php foreach($student as $keyStudent => $value) : ?>
-                        <?php if($keyStudent != 'image') : ?>
+                        <?php //foreach($student as $keyStudent => $value) : ?>
+                        <?php //if($keyStudent != 'image') : ?>
                         <td class="align-middle">
-                            <?php print($value); ?>
+                            <?php print($students[$i]['Firstname'] . " " . $students[$i]['Lastname']); ?>
                         </td>
-                        <?php endif; ?>
-                        <?php endforeach; ?>
+                        <td class="align-middle">
+                            <?php print($students[$i]['Email']); ?>
+                        </td>
+                        <td class="align-middle">
+                            <?php print($students[$i]['Phone']); ?>
+                        </td>
+                        <td class="align-middle">
+                            <?php print($students[$i]['EnrollNumber']); ?>
+                        </td>
+                        <td class="align-middle">
+                            <?php print($students[$i]['DateOfAdmission']); ?>
+                        </td>
+                        <?php //endif; ?>
+                        <?php //endforeach; ?>
                         <td class="text-primary align-middle text-center">
-                            <a href="./student/edit.php?index=<?php print($key);?>">
+                            <a href="./student/edit.php?id=<?php print($students[$i]['Id_Student']);?>">
                                 <i class="fas fa-pen pe-3"></i>
                             </a>
-                            <a href="../src/controllers/student/delete.php?index=<?php print($key);?>">
+                            <a href="../src/controllers/student/delete.php?id=<?php print($students[$i]['Id_Student'])?>">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php endfor; ?>
               </table>
             </div>
         </div>

@@ -1,32 +1,26 @@
 <?php
-if(isset($_POST['save'])){
-    //open the json file
-    $json = file_get_contents('../../../translations/json/student.json');
-    $data = json_decode($json, true);
+include_once '../config.php';
 
-    //find enrollNumber
-    foreach ($data as $item) :
-        if (in_array($_POST['enrollNumber'], $item)) :
-            header('location: ../../../view/student.php?msg=true');
-            die(null);
-        endif;
-    endforeach;
+$pdo = pdo_connect_mysql();
 
-    //data in out POST
-    $input = array(
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
-        'phone' => $_POST['phone'],
-        'enrollNumber' => $_POST['enrollNumber'],
-        'dateOfAdmission' => $_POST['dateOfAdmission']
-    );
+// Check if POST data is not empty
+if (!empty($_POST)) {
+    //$Firstname = $_POST['Firstname'] ?? '';
+    $Firstname = $_POST['Firstname'];
+    $Lastname = $_POST['Lastname'];
+    $Email = $_POST['Email'];
+    $Phone = $_POST['Phone'];
+    //$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
+    //$Username = $_POST['Username'];
+    //$Password = $_POST['Password'];
+    $EnrollNumber = $_POST['EnrollNumber'];
+    $DateOfAdmission = $_POST['DateOfAdmission'];
 
-    //append the input to our array
-    $data[] = $input;
-    //encode back to json
-    $json = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents('../../../translations/json/student.json', $json);
+    // Insert new record into the contacts table
+    $stmt = $pdo->prepare('INSERT INTO student (Firstname, Lastname, Email, Phone, EnrollNumber, DateOfAdmission) VALUES (?, ?, ?, ?, ?, ?)');
+    $stmt->execute([$Firstname, $Lastname, $Email, $Phone, $EnrollNumber, $DateOfAdmission]);
 
-    header('location: ../../../view/student.php');
+    pdo_deconnect_msql($pdo);
 }
-?>
+
+header('location: ../../../view/student.php');

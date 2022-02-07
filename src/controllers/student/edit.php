@@ -1,25 +1,22 @@
 <?php
-if (isset($_POST['save'])) {
-    //open the json file
-    $json = file_get_contents('../../../translations/json/student.json');
-    $data = json_decode($json, true);
-    //set the updated values
-    $input = array(
-        'image' => "profile.png",
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
-        'phone' => $_POST['phone'],
-        'enrollNumber' => $_POST['enrollNumber'],
-        'dateOfAdmission' => $_POST['dateOfAdmission']
-    );
+include_once "../config.php";
+$pdo = pdo_connect_mysql();
 
-    //update the selected index
-    $data[$index] = $input;
+    if (!empty($_POST)) {
+        $Firstname = $_POST['Firstname'];
+        $Lastname = $_POST['Lastname'];
+        $Email = $_POST['Email'];
+        $Phone = $_POST['Phone'];
+        $EnrollNumber = $_POST['EnrollNumber'];
+        $DateOfAdmission = $_POST['DateOfAdmission'];
 
-    //encode back to json
-    $data = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents('../../../translations/json/student.json', $data);
+        // Update the record
+        $stmt = $pdo->prepare('UPDATE student SET Firstname = ?, Lastname = ?, Email = ?, Phone = ?, EnrollNumber = ?, DateOfAdmission = ? WHERE Id_Student = ?');
+        $stmt->execute([$Firstname, $Lastname, $Email, $Phone, $EnrollNumber, $DateOfAdmission, $_POST['Id_Student']]);
+    }
+
+
 
     header('location: ../../../view/student.php');
-}
+
 include "../../../view/components/footer.php";

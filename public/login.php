@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="">
             <div class="d-flex justify-content-center">
-                <div class="shadow rounded-3 bg-light p-4 w-35">
+                <div class="shadow rounded-3 bg-light p-4 w-sm-50 w-md-25">
                     <div class="text-start ms-5">
                         <h1 class="v-line h3">
                             E-Classe

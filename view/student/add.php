@@ -13,24 +13,38 @@
                 <form method="POST" action="../src/controllers/student/add.php">
                     <!--<a href="read.php" class="btn btn-primary">Back</a>-->
                     <div class="mb-1">
-                        <label for="name" class="form-label">name</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <label for="Firstname" class="form-label">Firstname</label>
+                        <input type="text" class="form-control" id="name" name="Firstname">
                     </div>
                     <div class="mb-1">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <label for="Lastname" class="form-label">Lastname</label>
+                        <input type="text" class="form-control" id="name" name="Lastname">
                     </div>
                     <div class="mb-1">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="phone" name="phone">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email">
                     </div>
                     <div class="mb-1">
-                        <label for="enrollNumber" class="form-label">enroll Number</label>
-                        <input type="text" class="form-control" id="enrollNumber" name="enrollNumber">
+                        <label for="Phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="Phone" name="Phone">
+                    </div>
+                    <!--
+                    <div class="mb-1">
+                        <label for="Username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="Username" name="Username">
                     </div>
                     <div class="mb-1">
-                        <label for="dateOfAdmission" class="form-label">date Of Admission</label>
-                        <input type="date" class="form-control" id="dateOfAdmission" name="dateOfAdmission">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="Password" name="Password">
+                    </div>
+                    -->
+                    <div class="mb-1">
+                        <label for="EnrollNumber" class="form-label">enroll Number</label>
+                        <input type="text" class="form-control" id="EnrollNumber" name="EnrollNumber">
+                    </div>
+                    <div class="mb-1">
+                        <label for="DateOfAdmission" class="form-label">date Of Admission</label>
+                        <input type="date" class="form-control" id="DateOfAdmission" name="DateOfAdmission">
                     </div>
                     <!-- image
                     <div class="mb-3">
@@ -39,7 +53,7 @@
                     </div>
                     -->
                     <div class="modal-footer">
-                        <input class="btn btn-primary bg-blue w-100" type="submit" name="save">
+                        <input class="btn btn-primary bg-blue w-100" type="submit" name="create">
                     </div>
                 </form>
             </div>
