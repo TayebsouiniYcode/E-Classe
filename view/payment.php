@@ -1,4 +1,19 @@
-<?php include "./components/header.php"; ?>
+<?php
+include "./components/header.php";
+include "../src/controllers/config.php";
+session_start();
+
+if(isset($_SESSION['Role'])) {
+    if($_SESSION['Role'] == 'Student') {
+        header('location: ../View/permissionErr.php');
+    }
+} else {
+    header('location: ../index.php');
+}
+
+$paymentDetails = getPaymentDetails();
+$numbersOfPayments = numberOfElement("payment_details");
+?>
 <div class="container-fluid">
     <div class="row">
         <?php include "./components/sidenav.php"; ?>
@@ -35,65 +50,16 @@
                     </thead>
                     <tbody>
                         <?php
-                            $payments = array(
-                                array(
-                                    'name' => 'Karthi',
-                                    'PaymentShedule' => 'First',
-                                    'BillNumber' => 00012223,
-                                    'AmountPaid' => 100000,
-                                    'BalanceAmount' => 500000,
-                                    'Date' => '05-Jan, 2022'
-                                ),
-                                array(
-                                    'name' => 'Lghbar',
-                                    'PaymentShedule' => 'First',
-                                    'BillNumber' => 2333234,
-                                    'AmountPaid' => 43002,
-                                    'BalanceAmount' => 90000,
-                                    'Date' => '03-Jan, 2019'
-                                ),
-                                array(
-                                    'name' => 'Lboukri',
-                                    'PaymentShedule' => 'First',
-                                    'BillNumber' => 324534564,
-                                    'AmountPaid' => 2000000,
-                                    'BalanceAmount' => 343,
-                                    'Date' => '25-Jan, 2018'
-                                ),
-                                array(
-                                    'name' => 'Bettal',
-                                    'PaymentShedule' => 'First',
-                                    'BillNumber' => 342543,
-                                    'AmountPaid' => 9433430,
-                                    'BalanceAmount' => 1000000,
-                                    'Date' => '19-Sep, 2020'
-                                ),
-                                array(
-                                    'name' => 'Lkhaloufi',
-                                    'PaymentShedule' => 'First',
-                                    'BillNumber' => 324214,
-                                    'AmountPaid' => 7800000,
-                                    'BalanceAmount' => 1030000,
-                                    'Date' => '11-Oct, 2021'
-                                ),
-                                array(
-                                    'name' => 'Darji',
-                                    'PaymentShedule' => 'First',
-                                    'BillNumber' => 3323004,
-                                    'AmountPaid' => 2434224343,
-                                    'BalanceAmount' => 50010000,
-                                    'Date' => '20-Jan, 2022'
-                                )
-                                
-                            );
-
-                            $numbersOfPayments = count($payments);
-                            
                             for ($i = 0 ; $i < $numbersOfPayments ; $i++) {
                                 echo '<tr>';
-                                foreach($payments[$i] as $key => $val) {
-                                    echo "<td>$val</td>";
-                                }
+                                //foreach($paymentDetails[$i] as $key => $val) {
+                                echo '<td>' . $paymentDetails[$i]['Firstname'] . ' ' . $paymentDetails[$i]['Lastname'] . '</td>';
+                                echo '<td>' . $paymentDetails[$i]['PaymentShedule'] . '</td>';
+                                echo '<td>' . $paymentDetails[$i]['BillNumber'] . '</td>';
+                                echo '<td>' . $paymentDetails[$i]['AmountPaid'] . '</td>';
+                                echo '<td> Coming soon </td>';
+                                echo '<td>' . $paymentDetails[$i]['Date'] . '</td>';
+                                //}
                                 echo '<td><a href="#"><i class="far fa-eye text-primary"></i></a></td>';
                                 echo '</tr>';
                             }

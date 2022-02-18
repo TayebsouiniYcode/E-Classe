@@ -7,12 +7,13 @@ if(!isset($_GET['id'])) {
 include_once "../../view/components/header.php";
 include_once '../../src/controllers/config.php';
 
-$pdo = pdo_connect_mysql();
+//$pdo = pdo_connect_mysql();
 
-$stmt = $pdo->prepare('SELECT * FROM student WHERE Id_Student = ?');
-$stmt->execute([$_GET['id']]);
-$student = $stmt->fetch(PDO::FETCH_ASSOC);
+//$stmt = $pdo->prepare('SELECT * FROM student WHERE Id_Student = ?');
+//$stmt->execute([$_GET['id']]);
+//$student = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$student = getStudentById($_GET['id']);
 ?>
 
 <div class="container w-50">

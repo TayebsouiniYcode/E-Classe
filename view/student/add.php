@@ -14,19 +14,19 @@
                     <!--<a href="read.php" class="btn btn-primary">Back</a>-->
                     <div class="mb-1">
                         <label for="Firstname" class="form-label">Firstname</label>
-                        <input type="text" class="form-control" id="name" name="Firstname">
+                        <input type="text" class="form-control" id="name" name="Firstname" required>
                     </div>
                     <div class="mb-1">
                         <label for="Lastname" class="form-label">Lastname</label>
-                        <input type="text" class="form-control" id="name" name="Lastname">
+                        <input type="text" class="form-control" id="name" name="Lastname" required>
                     </div>
                     <div class="mb-1">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="Email" name="Email">
+                        <input type="email" class="form-control" id="Email" name="Email" required>
                     </div>
                     <div class="mb-1">
                         <label for="Phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="Phone" name="Phone">
+                        <input type="text" class="form-control" id="Phone" name="Phone" required>
                     </div>
                     <!--
                     <div class="mb-1">
@@ -40,11 +40,11 @@
                     -->
                     <div class="mb-1">
                         <label for="EnrollNumber" class="form-label">enroll Number</label>
-                        <input type="text" class="form-control" id="EnrollNumber" name="EnrollNumber">
+                        <input type="text" class="form-control" id="EnrollNumber" name="EnrollNumber" required>
                     </div>
                     <div class="mb-1">
                         <label for="DateOfAdmission" class="form-label">date Of Admission</label>
-                        <input type="date" class="form-control" id="DateOfAdmission" name="DateOfAdmission">
+                        <input type="date" class="form-control" id="DateOfAdmission" name="DateOfAdmission" required>
                     </div>
                     <!-- image
                     <div class="mb-3">

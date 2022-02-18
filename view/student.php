@@ -1,22 +1,18 @@
 <?php
+session_start();
+
+if(isset($_SESSION['Role'])) {
+    if($_SESSION['Role'] == 'Student') {
+        header('location: ../View/permissionErr.php');
+    }
+} else {
+    header('location: ../index.php');
+}
+
 include_once "./components/header.php";
 include_once "../src/controllers/config.php";
-
-$pdo = pdo_connect_mysql();
-
-// Prepare the SQL statement and get records from our contacts table, LIMIT will determine the page
-$stmt = $pdo->prepare('SELECT * FROM student');
-$stmt->execute();
-// Fetch the records so we can display them in our template.
-$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$numberOfStudents = $pdo->query('SELECT COUNT(*) FROM student')->fetchColumn();
-
-
-pdo_deconnect_msql($pdo);
-//$numberOfStudents = count($students);
-
-
+$students = getStudents();
+$numberOfStudents =  numberOfElement('students');
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -56,17 +52,11 @@ pdo_deconnect_msql($pdo);
                   </tr>
                 </thead>
                 <tbody>
-                    <?php //foreach($res as $key => $student) : ?>
                     <?php for($i = 0 ; $i < $numberOfStudents; $i++) : ?>
                     <tr class="mt-2">
                         <th scope="row">
-                            <img
-                              src="../assets/img/profile.png"
-                              alt="avatar img"
-                              width="65" height="55">
+                            <img src="../assets/img/profile.png" alt="avatar img" width="65" height="55">
                         </th>
-                        <?php //foreach($student as $keyStudent => $value) : ?>
-                        <?php //if($keyStudent != 'image') : ?>
                         <td class="align-middle">
                             <?php print($students[$i]['Firstname'] . " " . $students[$i]['Lastname']); ?>
                         </td>
@@ -82,8 +72,6 @@ pdo_deconnect_msql($pdo);
                         <td class="align-middle">
                             <?php print($students[$i]['DateOfAdmission']); ?>
                         </td>
-                        <?php //endif; ?>
-                        <?php //endforeach; ?>
                         <td class="text-primary align-middle text-center">
                             <a href="./student/edit.php?id=<?php print($students[$i]['Id_Student']);?>">
                                 <i class="fas fa-pen pe-3"></i>

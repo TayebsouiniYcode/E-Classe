@@ -7,10 +7,10 @@
         <div class="d-flex flex-column align-items-center d-none d-md-flex mt-4">
             <img class="rounded-circle" src="../assets/img/avatar.jpg" alt="avatar image" width="80" height="80">
             <p class="mt-1 fw-bold">
-                Tayeb SOUINI
+                <?php echo $_SESSION['Firstname'] . ' ' . $_SESSION['Lastname']; ?>
             </p>
             <p class="text-primary">
-                Admin
+                <?php echo $_SESSION['Role'] ?>
             </p>
         </div>
         <nav class="">
@@ -65,7 +65,7 @@
                 </li>
             </ul>
             <div class="">
-                <a href="../public/login.php" class="btn nav-link text-dark mt-3">
+                <a href="../src/controllers/logout.php?logout=1" class="btn nav-link text-dark mt-3">
                     <span class="d-none d-md-inline-block align-middle">
                         Logout
                     </span> 
