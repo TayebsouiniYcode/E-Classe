@@ -1,6 +1,11 @@
 <?php
     include "./components/header.php";
 ?>
+
+<?php
+
+
+?>
 <!-- Modal add new student -->
 <div class="modal fade" id="addNewStudent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -10,11 +15,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="../src/controllers/student/add.php">
+                <!--<form method="POST" action="../src/controllers/student/add.php"> -->
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <!--<a href="read.php" class="btn btn-primary">Back</a>-->
                     <div class="mb-1">
                         <label for="Firstname" class="form-label">Firstname</label>
                         <input type="text" class="form-control" id="name" name="Firstname" required>
+                        <span class="text-danger"></span>
                     </div>
                     <div class="mb-1">
                         <label for="Lastname" class="form-label">Lastname</label>

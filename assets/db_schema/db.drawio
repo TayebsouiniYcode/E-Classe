@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e">
+    <diagram id="ISarNLXBusaXWZq5Rx4n" name="Page-1">
+        <mxGraphModel dx="734" dy="430" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="6" value="Courses" style="swimlane;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="50" width="160" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Students" style="swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="251" y="256" width="160" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Students" style="swimlane;" vertex="1" parent="1">
+                    <mxGeometry x="28" y="56" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Id_Student" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="18">
+                    <mxGeometry x="6" y="28" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Firstname" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="18">
+                    <mxGeometry x="6" y="47" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Lastname" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="18">
+                    <mxGeometry x="6" y="67" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Email" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="18">
+                    <mxGeometry x="6" y="85" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Phone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="18">
+                    <mxGeometry x="9" y="107" width="80" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
