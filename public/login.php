@@ -62,6 +62,10 @@ if(isset($_GET['msg'])) {
                                 Forgot your password?
                                 <a href="#">Reset password</a>
                             </p>
+                            <p class="text-center mt-2 text-muted">
+                                Create an account?
+                                <a href="./signup.php">click here</a>
+                            </p>
                         </div>
                     </form>
                 </div>
