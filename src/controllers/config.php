@@ -28,6 +28,7 @@ function numberOfElement($tableName) {
 
 function addUtilisateur($Firstname, $Lastname, $DateOfBirth, $Username, $Password, $Fk_Student, $Phone, $Email){
     $pdo = pdo_connect_mysql();
+    
     $statment = $pdo->prepare('INSERT INTO utilisateurs (Firstname, Lastname, DateOfbirth, Username, Password, Fk_Student, Phone, Email) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
     $statment->execute(array($Firstname, $Lastname, $DateOfBirth, $Username, $Password, $Fk_Student, $Phone, $Email));
@@ -44,6 +45,30 @@ function addStudent($DateOfAdmission, $EnrollNumber, $Firstname, $Lastname, $Ema
     $DefaultUsername = $Firstname . $Lastname . $lastId;
 
     addUtilisateur($Firstname, $Lastname, '1994-02-04', $DefaultUsername, '123', $lastId, $Phone, $Email);
+    $pdo = null;
+}
+
+function signUpStudent($DateOfAdmission, $EnrollNumber, $Firstname, $Lastname, $Email, $Phone, $Username, $Password) {
+    $pdo = pdo_connect_mysql();
+
+    $stmt = $pdo->prepare('INSERT INTO students (DateOfAdmission, EnrollNumber) VALUES (?, ?)');
+    $stmt->execute(array($DateOfAdmission, $EnrollNumber));
+    $lastId = $pdo->lastInsertId();
+
+    $DefaultUsername = $Firstname . $Lastname . $lastId;
+
+    addUtilisateur($Firstname, $Lastname, $DateOfBirth, $Username, $Password, $lastId, $Phone, $Email);
+    $pdo = null;
+}
+
+
+function signUpAdmin($Firstname, $Lastname, $DateOfBirth, $Email, $Phone, $Username, $Password){
+    $pdo = pdo_connect_mysql();
+
+    $statment = $pdo->prepare('INSERT INTO utilisateurs (Firstname, Lastname, DateOfbirth, Username, Password, Fk_Admin, Phone, Email) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+    $statment->execute(array($Firstname, $Lastname, $DateOfBirth, $Username, $Password, 1, $Phone, $Email));
+    
     $pdo = null;
 }
 //addStudent('2022-09-09' , '356457547453');
