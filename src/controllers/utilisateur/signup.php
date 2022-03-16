@@ -20,14 +20,6 @@
             signUpAdmin($Firstname, $Lastname, $DateOfBirth, $Email, $Phone, $Username, $Password);
         }
         
-    
         header('location: ../../../public/login.php');
-        //addStudent($DateOfAdmission, $EnrollNumber, $Firstname, $Lastname, $Email, $Phone);
-        // Insert new record into the contacts table
-        //$stmt = $pdo->prepare('INSERT INTO student (Firstname, Lastname, Email, Phone, EnrollNumber, DateOfAdmission) VALUES (?, ?, ?, ?, ?, ?)');
-        //$stmt->execute([$Firstname, $Lastname, $Email, $Phone, $EnrollNumber, $DateOfAdmission]);
-    
-        //pdo_deconnect_msql($pdo);
     }
-
 ?>
