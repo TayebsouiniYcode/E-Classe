@@ -57,14 +57,14 @@
                 <input type="radio"  id="role" name="role" value="admin">
                 <label for="admin">Admin</label>
             </div>
-            <div class="row d-none" id="studentSection">
+            <div class="row" id="studentSection">
                 <div class="mb-1 col-lg-6">
                     <label for="enrollNumber" class="form-label">Enroll Number <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="enrollNumber" name="enrollNumber">
                 </div>
                 <div class="mb-1 col-lg-6">
                     <label for="dateOfAdmission" class="form-label">Date of admission <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="dateOfAdmission" name="dateOfAdmission">
+                    <input type="date" class="form-control" id="dateOfAdmission" name="dateOfAdmission">
                 </div>
             </div>
             <div class="mt-4">
