@@ -37,12 +37,13 @@ $values = [];
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="../src/controllers/student/add.php">
+                <form name="addStudent" method="POST" action="../src/controllers/student/add.php" onsubmit="validateAddStudent(event)">
                 <!--<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">-->
                     <!--<a href="read.php" class="btn btn-primary">Back</a>-->
                     <div class="mb-1">
                         <label for="Firstname" class="form-label">Firstname</label>
                         <input type="text" class="form-control" id="name" name="Firstname">
+                        <span class="text-danger" id="firstnameMsg"></span>
                         <?php if (in_array('Firstname', $errors)): ?>
                             <span class="text-danger">Entre votre prénom</span>
                         <?php endif; ?>
@@ -107,3 +108,5 @@ $values = [];
         </div>
     </div>
 </div>
+
+<script src="./../assets/js/app.js"></script>

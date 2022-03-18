@@ -39,3 +39,11 @@
 .bg-blue {
     background-color: #00C1FE !important;
 }
+
+input:valid {
+
+}
+
+input:invalid {
+    
+}
