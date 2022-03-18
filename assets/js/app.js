@@ -2,8 +2,6 @@
 
 let role = document.getElementsByClassName('role');
 
-console.log(role);
-
 function validate(e){
     let firstnameValue = document.forms['signup']['firstname'].value;
     let lastnameValue = document.forms['signup']['lastname'].value;
@@ -85,7 +83,15 @@ function validate(e){
 
     if (!isValide){
         e.preventDefault();
-    }
-    
+    } 
 }
  
+function validateAddStudent(e){
+    let firstnameValue = document.forms["addStudent"]["Firstname"].value;
+
+    if (firstnameValue == ""){
+        document.getElementById("firstnameMsg").innerText = "please enter your name";
+        e.preventDefault();
+    }
+
+}
